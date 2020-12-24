@@ -2,39 +2,46 @@
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeOperators   #-}
 module Lib
-    ( startApp
-    , app
+    ( runServant
     ) where
 
-import Data.Aeson
-import Data.Aeson.TH
-import Network.Wai
-import Network.Wai.Handler.Warp
-import Servant
+import Servant(serve, Proxy(..), Server, JSON, Get, (:>))
+import Data.Aeson(ToJSON)
+import Data.Time.Calendar
+import GHC.Generics(Generic)
+import Network.Wai(Application)
+import Network.Wai.Handler.Warp(run)
 
 data User = User
-  { userId        :: Int
-  , userFirstName :: String
-  , userLastName  :: String
-  } deriving (Eq, Show)
+  { name :: String
+  , age :: Int
+  , email :: String
+  , registration_date :: Day
+  } deriving (Eq, Show, Generic)
 
-$(deriveJSON defaultOptions ''User)
+instance ToJSON User
 
-type API = "users" :> Get '[JSON] [User]
 
-startApp :: IO ()
-startApp = run 8080 app
+users1 :: [User]
+users1 =
+  [ User "Isaac Newton"    372 "isaac@newton.co.uk" (fromGregorian 1683  3 1)
+  , User "Albert Einstein" 136 "ae@mc2.org"         (fromGregorian 1905 12 1)
+  ]
 
-app :: Application
-app = serve api server
+type UserAPI1 = "users" :> Get '[JSON] [User]
 
-api :: Proxy API
-api = Proxy
+server1 :: Server UserAPI1
+server1 = return users1
 
-server :: Server API
-server = return users
+userAPI :: Proxy UserAPI1
+userAPI = Proxy
 
-users :: [User]
-users = [ User 1 "Isaac" "Newton"
-        , User 2 "Albert" "Einstein"
-        ]
+-- serve allows you to implement an API and produce a wai Application.
+-- serve :: HasServer api '[] => Proxy api -> Server api -> Application
+app1 :: Application
+app1 = serve userAPI server1
+
+
+
+runServant :: IO ()
+runServant = run 8081 app1
