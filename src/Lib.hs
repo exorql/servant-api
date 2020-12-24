@@ -7,7 +7,7 @@ module Lib
 
 import Servant(serve, Proxy(..), Server, JSON, Get, (:>))
 import Data.Aeson(ToJSON)
-import Data.Time.Calendar
+import Data.Time (UTCTime)
 import GHC.Generics(Generic)
 import Network.Wai(Application)
 import Network.Wai.Handler.Warp(run)
