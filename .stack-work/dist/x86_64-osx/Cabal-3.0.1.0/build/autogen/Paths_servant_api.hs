@@ -30,7 +30,7 @@ version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
 bindir     = "/Users/200396/sample/servant-api/.stack-work/install/x86_64-osx/36470d06d630196b927d6b5c995710217d31c9f62bdedfd39417114d196e4773/8.8.4/bin"
-libdir     = "/Users/200396/sample/servant-api/.stack-work/install/x86_64-osx/36470d06d630196b927d6b5c995710217d31c9f62bdedfd39417114d196e4773/8.8.4/lib/x86_64-osx-ghc-8.8.4/servant-api-0.1.0.0-5N3FRcIOsf8GsOv0W30t1P"
+libdir     = "/Users/200396/sample/servant-api/.stack-work/install/x86_64-osx/36470d06d630196b927d6b5c995710217d31c9f62bdedfd39417114d196e4773/8.8.4/lib/x86_64-osx-ghc-8.8.4/servant-api-0.1.0.0-6jl4eS66fCR37n3CYIVGIg"
 dynlibdir  = "/Users/200396/sample/servant-api/.stack-work/install/x86_64-osx/36470d06d630196b927d6b5c995710217d31c9f62bdedfd39417114d196e4773/8.8.4/lib/x86_64-osx-ghc-8.8.4"
 datadir    = "/Users/200396/sample/servant-api/.stack-work/install/x86_64-osx/36470d06d630196b927d6b5c995710217d31c9f62bdedfd39417114d196e4773/8.8.4/share/x86_64-osx-ghc-8.8.4/servant-api-0.1.0.0"
 libexecdir = "/Users/200396/sample/servant-api/.stack-work/install/x86_64-osx/36470d06d630196b927d6b5c995710217d31c9f62bdedfd39417114d196e4773/8.8.4/libexec/x86_64-osx-ghc-8.8.4/servant-api-0.1.0.0"

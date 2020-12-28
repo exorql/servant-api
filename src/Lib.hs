@@ -1,6 +1,8 @@
 {-# LANGUAGE DataKinds       #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeOperators   #-}
+{-# LANGUAGE DeriveGeneric #-}
+
 module Lib
     ( runServant
     ) where

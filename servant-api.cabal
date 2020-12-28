@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: cf4ef07efea619edeec3c91c53bf37b5b925f30c306ace44c7225fa8e4d5955b
+-- hash: f2c541b77c15f19f9ea7b93a95d90f08b28d27d90e3714110dd1251cbde60999
 
 name:           servant-api
 version:        0.1.0.0
@@ -35,6 +35,7 @@ library
       aeson
     , base >=4.7 && <5
     , servant-server
+    , time
     , wai
     , warp
   default-language: Haskell2010
@@ -51,6 +52,7 @@ executable servant-api-exe
     , base
     , servant-api
     , servant-server
+    , time
     , wai
     , warp
   default-language: Haskell2010
@@ -71,6 +73,7 @@ test-suite servant-api-test
     , hspec-wai-json
     , servant-api
     , servant-server
+    , time
     , wai
     , warp
   default-language: Haskell2010

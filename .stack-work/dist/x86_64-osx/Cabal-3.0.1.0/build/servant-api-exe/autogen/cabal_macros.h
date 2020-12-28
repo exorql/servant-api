@@ -55,6 +55,17 @@
   (major1) == 0 && (major2) == 16 && (minor) <= 2)
 #endif /* MIN_VERSION_servant_server */
 
+/* package time-1.9.3 */
+#ifndef VERSION_time
+#define VERSION_time "1.9.3"
+#endif /* VERSION_time */
+#ifndef MIN_VERSION_time
+#define MIN_VERSION_time(major1,major2,minor) (\
+  (major1) <  1 || \
+  (major1) == 1 && (major2) <  9 || \
+  (major1) == 1 && (major2) == 9 && (minor) <= 3)
+#endif /* MIN_VERSION_time */
+
 /* package wai-3.2.2.1 */
 #ifndef VERSION_wai
 #define VERSION_wai "3.2.2.1"
@@ -166,7 +177,7 @@
 #endif /* MIN_TOOL_VERSION_runghc */
 
 #ifndef CURRENT_COMPONENT_ID
-#define CURRENT_COMPONENT_ID "servant-api-0.1.0.0-DivsVmiFMp3CjSjwUQBd1U-servant-api-exe"
+#define CURRENT_COMPONENT_ID "servant-api-0.1.0.0-6zulRkaHzKA3DguBn6XMaU-servant-api-exe"
 #endif /* CURRENT_COMPONENT_ID */
 #ifndef CURRENT_PACKAGE_VERSION
 #define CURRENT_PACKAGE_VERSION "0.1.0.0"
